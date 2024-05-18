@@ -1,2 +1,5 @@
 .idea/
 .vscode/
+dist/
+.venv/
+*.py[cod]
