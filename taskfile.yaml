@@ -9,6 +9,11 @@ tasks:
       - pyproject-bump micro
       - task: bump
 
+  a:
+    cmds:
+      - pyproject-bump a
+      - task: bump
+
   bump:
     vars:
       VERSION:
@@ -20,6 +25,6 @@ tasks:
 
   feat:
     cmds:
-      - python -c 'import secrets;print(secrets.token_safe(64))' > file
+      - python -c 'import secrets;print(secrets.token_urlsafe(64))' > file
       - git add file
       - "git cm 'feat: new feature'"
