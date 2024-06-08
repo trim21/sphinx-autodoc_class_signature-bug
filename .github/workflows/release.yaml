@@ -38,4 +38,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CHANGELOG: "${{ steps.changelog.outputs.changes }}"
-          EXTRA_OPTS: "${{ (env.preRelease == 'true') && ('-p') || () }}"
+          EXTRA_OPTS: "${{ env.preRelease == 'true' && '-p' || '' }}"
