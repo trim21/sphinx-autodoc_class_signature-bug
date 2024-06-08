@@ -22,6 +22,7 @@ jobs:
         uses: trim21/changelog-previous-tag@master
         with:
           token: ${{ github.token }}
+          version-spec: pep440
 
       - name: Update CHANGELOG
         id: changelog
@@ -29,7 +30,7 @@ jobs:
         with:
           token: ${{ github.token }}
           fromTag: ${{ github.ref_name }}
-          toTag: ${{ steps.tag.outputs.previousTag }}
+          toTag: ${{ env.previousTag }}
           writeToFile: false
 
       - name: Upload Github Release
