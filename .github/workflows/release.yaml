@@ -17,12 +17,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Get Previous Tag
+        id: tag
+        uses: trim21/changelog-previous-tag@master
+        with:
+          token: ${{ github.token }}
+
       - name: Update CHANGELOG
         id: changelog
         uses: requarks/changelog-action@v1
         with:
           token: ${{ github.token }}
-          tag: ${{ github.ref_name }}
+          fromTag: ${{ github.ref_name }}
+          toTag: ${{ steps.tag.outputs.previousTag }}
           writeToFile: false
 
       - name: Upload Github Release
