@@ -17,3 +17,9 @@ tasks:
       - git add pyproject.toml
       - 'git commit -m "bump: {{.VERSION}}"'
       - 'git tag "v{{.VERSION}}" -m "v{{.VERSION}}"'
+
+  feat:
+    cmds:
+      - python -c 'import secrets;print(secrets.token_safe(64))' > file
+      - git add file
+      - "git cm 'feat: new feature'"
