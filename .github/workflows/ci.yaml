@@ -4,12 +4,6 @@ on:
   push:
 
 jobs:
-  docker:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-      - run: docker build -t tmp .
   ci:
     runs-on: ubuntu-24.04
 
