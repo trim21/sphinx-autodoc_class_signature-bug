@@ -21,6 +21,9 @@ jobs:
           sudo apt-get install -y cmake ninja-build
           sudo apt install qt6-base-dev qt6-base-private-dev qt6-tools-dev
 
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+
       - run: |
           cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
           cmake --build build
