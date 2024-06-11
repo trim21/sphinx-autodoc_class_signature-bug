@@ -21,7 +21,7 @@ jobs:
       - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
         working-directory: libtorrent
 
-      - run: cmake -B build build
+      - run: cmake --build build
         working-directory: libtorrent
 
       - run: sudo cmake --install build
