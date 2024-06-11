@@ -2,7 +2,7 @@ set -ex
 
 apt-get update -y
 
-apt-get install git -t
+apt-get install git -y
 
 git clone --depth=1 https://github.com/qbittorrent/qBittorrent
 git clone --depth=1 --recurse-submodules --branch v2.0.10 https://github.com/arvidn/libtorrent.git libtorrent
