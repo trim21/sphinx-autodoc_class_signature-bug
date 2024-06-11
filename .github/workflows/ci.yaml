@@ -30,12 +30,12 @@ jobs:
           libssl-dev libgeoip-dev libboost-dev libboost-system-dev
           libboost-chrono-dev libboost-random-dev cmake ninja-build
 
-      - run: |
-          cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo \
-              -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
-          cmake --build build
-          sudo cmake --install build
-        working-directory: libtorrent
+#      - run: |
+#          cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo \
+#              -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+#          cmake --build build
+#          sudo cmake --install build
+#        working-directory: libtorrent
 
       - run: |
           cmake -B build -G Ninja -D BUILD_SHARED_LIBS=OFF \
@@ -43,7 +43,6 @@ jobs:
             -D TESTING=OFF -D QT6=ON -D GUI=OFF \
             -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
       - run: cmake --build build
-
 
       - uses: actions/upload-artifact@v4
         with:
