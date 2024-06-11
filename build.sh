@@ -17,11 +17,11 @@ apt-get install -y qt6-base-dev qt6-base-private-dev qt6-tools-dev
 
 cd libtorrent
 
-cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D CMAKE_CXX_COMPILER="ccache" -D CMAKE_C_COMPILER="ccache"
+cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
 cmake --build build
 cmake --install build
 
 cd ..
 
-cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF  -D CMAKE_CXX_COMPILER="ccache" -D CMAKE_C_COMPILER="ccache"
+cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF
 cmake -B build build
