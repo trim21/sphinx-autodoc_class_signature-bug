@@ -18,13 +18,10 @@ jobs:
           sudo apt-get install -y cmake ninja-build
           sudo apt install qt6-base-dev qt6-base-private-dev qt6-tools-dev
 
-      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
-        working-directory: libtorrent
-
-      - run: cmake --build build
-        working-directory: libtorrent
-
-      - run: sudo cmake --install build
+      - run: |
+          cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
+          cmake --build build
+          sudo cmake --install build
         working-directory: libtorrent
 
       - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF
