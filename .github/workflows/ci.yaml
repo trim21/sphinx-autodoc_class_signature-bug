@@ -32,10 +32,10 @@ jobs:
           cache: true
 
       - run: |
-          cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+          cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
           cmake --build build
           sudo cmake --install build
         working-directory: libtorrent
 
-      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
+      - run: cmake -B build -G Ninja -D BUILD_SHARED_LIBS=OFF -D CMAKE_BUILD_TYPE=RelWithDebInfo -D TESTING=OFF -D QT6=ON -D GUI=OFF -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
       - run: cmake --build build
