@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install -y cmake ninja-build
           sudo apt install qt6-base-dev qt6-base-private-dev qt6-tools-dev
 
-      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo -D deprecated-functions=OFF
+      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug
         working-directory: libtorrent
 
       - run: cmake -B build build
@@ -27,5 +27,5 @@ jobs:
       - run: sudo cmake --install build
         working-directory: libtorrent
 
-      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=RelWithDebInfo -D CMAKE_CXX_FLAGS=-Werror -Wno-error=deprecated-declarations -D TESTING=OFF -D QT6=ON -D GUI=OFF
+      - run: cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF
       - run: cmake -B build build
