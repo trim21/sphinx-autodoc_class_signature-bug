@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - run: git clone --depth=1 https://github.com/qbittorrent/qBittorrent
-      - run: git clone --depth=1 --recurse-submodules --branch v2.0.10 https://github.com/qbittorrent/qBittorrent libtorrent
+      - run: git clone --depth=1 --recurse-submodules --branch v2.0.10 https://github.com/arvidn/libtorrent.git libtorrent
 
       - run: |
           sudo apt-get update -y
