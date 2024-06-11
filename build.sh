@@ -13,7 +13,7 @@ apt-get install -y build-essential pkg-config automake libtool git zlib1g-dev li
 apt-get install -y libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
 apt-get install -y cmake ninja-build
 
-apt-get install qt6-base-dev qt6-base-private-dev qt6-tools-dev
+apt-get install -y qt6-base-dev qt6-base-private-dev qt6-tools-dev
 
 pushd libtorrent
 
