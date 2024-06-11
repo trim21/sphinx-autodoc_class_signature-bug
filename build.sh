@@ -23,4 +23,4 @@ cmake --install build
 cd ..
 
 cmake -B build -G Ninja -D CMAKE_BUILD_TYPE=Debug -D TESTING=OFF -D QT6=ON -D GUI=OFF
-cmake -B build build
+cmake --build build
