@@ -8,7 +8,6 @@ git clone --depth=1 https://github.com/qbittorrent/qBittorrent
 git clone --depth=1 --recurse-submodules --branch v2.0.10 https://github.com/arvidn/libtorrent.git libtorrent
 
 apt-get update -y
-apt-get install -y libboost-all-dev
 apt-get install -y build-essential pkg-config automake libtool git zlib1g-dev libssl-dev libgeoip-dev
 apt-get install -y libboost-dev libboost-system-dev libboost-chrono-dev libboost-random-dev
 apt-get install -y cmake ninja-build
