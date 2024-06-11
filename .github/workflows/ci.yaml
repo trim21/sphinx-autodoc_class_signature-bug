@@ -45,3 +45,8 @@ jobs:
             -D TESTING=OFF -D QT6=ON -D GUI=OFF \
             -D CMAKE_C_COMPILER_LAUNCHER=ccache -D CMAKE_CXX_COMPILER_LAUNCHER=ccache
       - run: cmake --build build
+
+
+      - uses: actions/upload-artifact@v4
+        with:
+          path: build
